@@ -1,0 +1,6 @@
+.site-publish/
+node_modules/
+*.log
+.qa/
+__pycache__/
+.venv/

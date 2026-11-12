@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "title": "半导体物理 · 产品体验课程",
+  "outline": [
+    {
+      "id": "chapter-basics",
+      "title": "半导体基础",
+      "parent": null
+    },
+    {
+      "id": "chapter-junction",
+      "title": "PN 结与器件",
+      "parent": null
+    }
+  ],
+  "templates": [],
+  "nodes": [
+    {
+      "id": "sample-carriers",
+      "chapter": "chapter-basics",
+      "title": "载流子与导电",
+      "tags": [
+        "基础概念"
+      ],
+      "sections": [
+        {
+          "sectionId": "sample-section-carriers",
+          "title": "从电子和空穴开始",
+          "blocks": [
+            {
+              "blockId": "sample-text-carriers",
+              "type": "text",
+              "blockVersion": 1,
+              "data": {
+                "text": "在半导体中，电子和空穴共同参与导电。电子带负电，空穴可以理解为价带中缺少电子留下的可移动状态。\n\n体验提示：返回知识图谱，点击卡片观察它和其他知识点的联系，再次点击中心卡片进入学习。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample-drift",
+      "chapter": "chapter-basics",
+      "title": "漂移与扩散",
+      "tags": [
+        "输运"
+      ],
+      "sections": [
+        {
+          "sectionId": "sample-section-drift",
+          "title": "两种运动机制",
+          "blocks": [
+            {
+              "blockId": "sample-text-drift",
+              "type": "text",
+              "blockVersion": 1,
+              "data": {
+                "text": "漂移来自电场作用，扩散来自载流子浓度不均匀。建立 PN 结的图像，需要同时理解这两种机制。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample-junction",
+      "chapter": "chapter-junction",
+      "title": "PN 结的形成",
+      "tags": [
+        "核心知识"
+      ],
+      "sections": [
+        {
+          "sectionId": "sample-section-junction",
+          "title": "从接触到平衡",
+          "blocks": [
+            {
+              "blockId": "sample-text-junction",
+              "type": "text",
+              "blockVersion": 1,
+              "data": {
+                "text": "P 型和 N 型半导体接触后，载流子发生扩散，结区形成空间电荷区和内建电场。平衡时，扩散与漂移相互抵消。"
+              }
+            },
+            {
+              "blockId": "sample-reference",
+              "type": "reference",
+              "blockVersion": 1,
+              "data": {
+                "target": "sample-drift",
+                "relationType": "prerequisite",
+                "anchor": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample-diode",
+      "chapter": "chapter-junction",
+      "title": "二极管与整流",
+      "tags": [
+        "应用"
+      ],
+      "sections": [
+        {
+          "sectionId": "sample-section-diode",
+          "title": "从知识走向应用",
+          "blocks": [
+            {
+              "blockId": "sample-text-diode",
+              "type": "text",
+              "blockVersion": 1,
+              "data": {
+                "text": "外加电压改变 PN 结的势垒，使二极管在正向和反向条件下呈现不同的导电特性。这个差异可以用于整流。"
+              }
+            },
+            {
+              "blockId": "sample-quiz",
+              "type": "quiz",
+              "blockVersion": 1,
+              "data": {
+                "question": "以下哪一项描述了扩散的主要原因？",
+                "options": [
+                  {
+                    "id": "sample-answer-a",
+                    "text": "载流子浓度存在差异"
+                  },
+                  {
+                    "id": "sample-answer-b",
+                    "text": "必须有外加电场"
+                  }
+                ],
+                "answer": "sample-answer-a",
+                "explanation": "扩散来自浓度梯度，漂移则与电场有关。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "sample-r1",
+      "source": "sample-carriers",
+      "target": "sample-drift",
+      "type": "prerequisite",
+      "reason": "先理解载流子，再理解输运"
+    },
+    {
+      "id": "sample-r2",
+      "source": "sample-drift",
+      "target": "sample-junction",
+      "type": "prerequisite",
+      "reason": "理解扩散与漂移后建立结区图像"
+    },
+    {
+      "id": "sample-r3",
+      "source": "sample-junction",
+      "target": "sample-diode",
+      "type": "prerequisite",
+      "reason": "PN 结是二极管的基础"
+    },
+    {
+      "id": "sample-r4",
+      "source": "sample-carriers",
+      "target": "sample-diode",
+      "type": "reference",
+      "reason": "联系基础概念与器件应用"
+    }
+  ]
+}

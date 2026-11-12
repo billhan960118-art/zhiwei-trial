@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: zhiwei-trial
+    runtime: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r deploy/render/requirements.txt
+    startCommand: gunicorn deploy.render.app:application --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120 --access-logfile -
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: ZHIWEI_BACKEND
+        value: supabase
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        value: https://jmiknozmjjnybmzjjwwv.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        value: zhiwei-media
+      - key: ZHIWEI_SECURE
+        value: "1"
